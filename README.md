@@ -8,6 +8,16 @@
   Prompt Engineering · LLM Evaluation · Structured JSON · Issue Prioritization
 </p>
 
+<p align="center">
+  <a href="https://www.credly.com/badges/8a5f8129-4b14-4918-8d71-1a2550539478/public_url">
+    Verify SAP Certification on Credly
+  </a>
+  &nbsp;·&nbsp;
+  <a href="01_Certificate/SAP-Generative-AI-Developer-Certificate.pdf">
+    View Certificate PDF
+  </a>
+</p>
+
 ---
 
 ## Overview
