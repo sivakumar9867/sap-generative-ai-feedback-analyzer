@@ -1,11 +1,5 @@
 # SAP Generative AI Feedback Analyzer
 
-<p align="center">
-  **Customer Feedback Intelligence using SAP Generative AI**
-  <br />
-  Prompt Engineering · LLM Evaluation · Structured JSON · Issue Prioritization
-</p>
-
 <h3 align="center">
   Customer Feedback Intelligence using SAP Generative AI
 </h3>
