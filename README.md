@@ -22,11 +22,24 @@
 
 ## Overview
 
-The **SAP Generative AI Feedback Analyzer** is a prompt-engineering project developed using the SAP AI Launchpad Prompt Editor.
+The **SAP Generative AI Feedback Analyzer** is a prompt-engineering project developed with the SAP AI Launchpad Prompt Editor. It explores how generative AI can transform unstructured customer feedback into structured information that supports customer-service analysis and routing.
 
-The project uses the `feedback-analyzer-CERT1834` prompt template in the `orchestration` scenario to analyze customer feedback emails and generate structured JSON outputs for customer-service workflows.
+The project uses the `feedback-analyzer-CERT1834` prompt template in the `orchestration` scenario to analyze customer feedback emails and produce structured JSON outputs. The documented workflow covers sentiment analysis, issue extraction, prioritization, routing recommendations, and actionable resolution points.
 
-It identifies customer sentiment, categorizes issues, extracts order and product references, and generates actionable resolution suggestions. It also explores multi-issue extraction and compares responses from different generative AI models.
+This repository contains project documentation and visual evidence from the prompt-engineering work. It is **not an executable application** and does not include an API service, command-line tool, exported prompt implementation, or deployment configuration.
+
+## Architecture and Workflow
+
+The documented architecture is a prompt-based workflow hosted in SAP AI Launchpad:
+
+1. A customer feedback email is provided as input to the prompt workflow.
+2. The SAP AI Launchpad Prompt Editor applies the `feedback-analyzer-CERT1834` prompt in the `orchestration` scenario.
+3. A selected generative AI model interprets the feedback.
+4. The workflow identifies sentiment, categories, references, and individual issues.
+5. Issues are prioritized and associated with routing and resolution recommendations.
+6. The result is presented as structured JSON for customer-service workflows.
+
+The repository documents and illustrates this workflow through the README and screenshots; it does not implement these processing steps in source code.
 
 ## Key Features
 
@@ -35,8 +48,11 @@ It identifies customer sentiment, categorizes issues, extracts order and product
 - **Reference Extraction:** Extracts order and product references when available.
 - **Multi-Issue Extraction:** Identifies multiple issues within a single customer message.
 - **Issue Prioritization:** Organizes extracted issues for effective routing.
-- **Actionable Recommendations:** Suggests relevant departments and resolution points.
+- **Department Routing:** Suggests the department or operational area best suited to handle an issue.
+- **Resolution Recommendations:** Provides actionable resolution points based on the identified issues.
 - **Structured JSON Output:** Generates consistent, structured responses.
+
+These capabilities are demonstrated through the included prompt and model-response screenshots. They are not exposed as executable repository features.
 
 ## Project Workflow
 
@@ -61,17 +77,17 @@ flowchart TD
 | Development Environment | Prompt Editor |
 | AI Technique | Prompt Engineering |
 | Output Format | Structured JSON |
-| Models Evaluated | Gemini 2.5 Flash Lite (001), GPT-4.1 nano, GPT-5-Mini |
+| Models Evaluated | Gemini 2.5 Flash Lite, GPT-4.1 nano, GPT-5-Mini |
 
 ## Generative AI Model Comparison
 
-Three models were tested using a customer feedback example involving a delivery problem.
+Three models were evaluated using a customer feedback example involving a delivery problem:
 
 | Model | Observed Response |
 |---|---|
 | Gemini 2.5 Flash Lite (001) | Included the expected structured routing fields in the shown example |
-| GPT-4.1 nano | Returned a compact structured response |
-| GPT-5-Mini | Produced a structured response with a more descriptive issue summary |
+| GPT-4.1 nano (2025-04-14) | Returned a compact structured response |
+| GPT-5-Mini (2025-08-07) | Produced a structured response with a more descriptive issue summary |
 
 *Note: These are qualitative observations from the available test screenshots, not formal performance benchmarks.*
 
@@ -115,4 +131,43 @@ Through this project, I explored:
 ## Repository Structure
 
 ```text
-SAP-Generative-AI
+SAP-Generative-AI-Feedback-Analyzer/
+├── 01_Certificate/
+│   └── SAP-Generative-AI-Developer-Certificate.pdf
+├── 02_Project/
+│   └── SAP-Generative-AI-Developer-Assessment-Task-Instructions.pdf
+├── 03_Screenshots/
+│   ├── Model response screenshots
+│   ├── Structured JSON and issue extraction screenshot
+│   ├── Multi-issue extraction prompt screenshot
+│   └── Actionable resolution points screenshot
+└── README.md
+```
+
+- **`01_Certificate/`** — Contains the SAP Generative AI Developer certification PDF.
+- **`02_Project/`** — Contains the assessment task instructions associated with the project.
+- **`03_Screenshots/`** — Contains visual evidence of model responses, prompt design, structured output, multi-issue extraction, and resolution recommendations.
+- **`README.md`** — Provides the project overview, documented workflow, capabilities, model comparison, and repository guidance.
+
+## Demonstrated Capabilities and Future Improvements
+
+### Demonstrated in this repository
+
+- Prompt-based customer feedback analysis in SAP AI Launchpad.
+- Sentiment analysis and issue categorization.
+- Order and product reference extraction.
+- Extraction and prioritization of multiple issues.
+- Department routing and resolution recommendations.
+- Structured JSON response generation.
+- Qualitative comparison of Gemini 2.5 Flash Lite, GPT-4.1 nano, and GPT-5-Mini.
+
+### Proposed future improvements
+
+The following items are potential next steps and are not implemented in this repository:
+
+- Export the prompt and JSON schema in machine-readable form.
+- Add a reproducible application or API integration.
+- Add automated validation and tests for structured model output.
+- Define evaluation datasets and formal comparison criteria.
+- Add safeguards for malformed output, prompt injection, and sensitive customer data.
+- Add deployment, monitoring, and secret-management configuration.
